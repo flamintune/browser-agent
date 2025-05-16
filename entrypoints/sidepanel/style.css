@@ -1,0 +1,38 @@
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 1;
+}
+
+.chat-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* 垂直置中 */
+  justify-content: space-between; /* 左右兩端對齊，中間留空 */
+  padding: 8px 16px; /* 視覺上好看一點 */
+  border-bottom: 1px solid #eee; /* 可選，做個底線分隔 */
+}
+.chat-header-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.chat-header-button {
+  font-size: 20px;
+}
+.ant-bubble-list {
+  flex: 1 1 auto; /* 撐開剩餘空間 */
+  overflow-y: auto; /* 可以滾動聊天內容 */
+}
+
+form {
+  flex: 0 0 auto; /* 輸入欄固定高度 */
+}
