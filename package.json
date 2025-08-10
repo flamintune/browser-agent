@@ -22,6 +22,7 @@
     "@langchain/openai": "^0.5.10",
     "browser-extension-url-match": "^1.2.0",
     "dayjs": "^1.11.13",
+    "js-element-picker": "^1.0.0",
     "markdown-it": "^14.1.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"

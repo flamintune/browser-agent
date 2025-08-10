@@ -13,12 +13,11 @@ export type messageResponse = {
 export const MESSAGE_TOOL_TYPES = {
   PAGE_CONTENT: {
     name: "pageContent",
-    description: "取得整個網頁的純文字內容",
+    description: "获取整个网页的纯文字内容",
   },
-  BIZ_EXTRACT_FIELDS: {
-    name: "bizformExtractFields",
-    description:
-      "擷取目前頁面中所有可輸入的欄位名稱與其值（如文字欄位、下拉選單、日期等）",
+  EXECUTE_SCRIPT: {
+    name: "executeScript",
+    description: "执行指定的 JavaScript 脚本",
   },
 };
 

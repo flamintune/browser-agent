@@ -9,7 +9,9 @@ export const pageContentTool = tool(
   async () => {
     const response = await sendMessage<string>({
       type: MESSAGE_TOOL_TYPES.PAGE_CONTENT.name,
-    });
+    },
+    "content",
+  );
     return response;
   },
   {

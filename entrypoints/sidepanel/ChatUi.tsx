@@ -10,6 +10,7 @@ import markdownit from "markdown-it";
 import { Typography } from "antd";
 import { agentConfig } from "@/utils/types/agentConfig";
 import { TAB_URL_CHANGED } from "@/utils/types/message";
+import UtilPanel from "./UtilPanel";
 
 const md = markdownit({ html: false, breaks: true });
 const ROLE_AI = "assistant";
@@ -174,11 +175,12 @@ export default function ChatUi() {
         openSettings={handleSettingsClick}
       />
       <Bubble.List items={messages} roles={rolesAsObject}></Bubble.List>
+      <UtilPanel />
       <Sender
         value={input}
         onChange={setInput}
         loading={isLoading}
-        placeholder="請輸入訊息..."
+        placeholder="您想要做什么..."
         onSubmit={handleSubmit}
         onCancel={handleCancel}
       />

@@ -9,7 +9,7 @@ export default defineConfig({
       description: "WXT + Agent",
       version: "1.0.0",
       action: {},
-      permissions: ["tabs", "storage"],
+      permissions: ["tabs", "storage", "scripting", "activeTab", "background"],
       host_permissions: ["<all_urls>"],
     };
   },

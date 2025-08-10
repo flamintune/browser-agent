@@ -1,41 +1,41 @@
-# 🔧 WXT + LangChain Chrome AI SidePanel 擴充功能
+# 🔧 WXT + LangChain Chrome AI SidePanel 扩展功能
 
-使用 [WXT](https://wxt.dev/) + [LangChain](https://js.langchain.com/) 快速打造一個具備 AI 對話與網頁操作能力的 Chrome 擴充功能。
+使用 [WXT](https://wxt.dev/) + [LangChain](https://js.langchain.com/) 快速打造一个具备 AI 对话与网页操作能力的 Chrome 扩展功能。
 
-本專案展示如何在 Chrome SidePanel 中嵌入 AI 對話機器人，結合 LangChain Agent，實現自動摘要、網頁互動等進階功能。
+本專案展示如何在 Chrome SidePanel 中嵌入 AI 对话机器人，结合 LangChain Agent，实现自动摘要、网页互动等进阶功能。
 
 ---
 
 ## 🚀 功能特色
 
-- 🗨️ Chat UI 對話機器人介面（Ant Design X 實作）
-- 🧠 支援 LangChain Agent，具備 Tool 呼叫能力
-- 🌐 可根據目前網頁 URL 動態提供對應工具（Tool）
-- 📋 支援 LLM API 設定（API URL / Key / Model）
-- 🔌 使用 `chrome.tabs` 與 `content-script` 互動網頁內容
-- 💡 SidePanel 介面可切換「對話模式」與「設定畫面」
+- 🗨️ Chat UI 对话机器人界面（Ant Design X 实作）
+- 🧠 支持 LangChain Agent，具备 Tool 呼叫能力
+- 🌐 可根据目前网页 URL 动态提供对应工具（Tool）
+- 📋 支持 LLM API 设定（API URL / Key / Model）
+- 🔌 使用 `chrome.tabs` 与 `content-script` 互动网页内容
+- 💡 SidePanel 界面可切换「对话模式」与「设定画面」
 
 ---
 
-## 📦 技術棧
+## 📦 技术栈
 
-| 類別         | 技術                    |
+| 类别         | 技术                    |
 | ------------ | ----------------------- |
-| 擴充開發框架 | [WXT](https://wxt.dev/) |
+| 扩展开发框架 | [WXT](https://wxt.dev/) |
 | LLM Agent    | LangChain.js            |
-| 對話介面     | Ant Design X            |
+| 对话界面     | Ant Design X            |
 | UI 框架      | React                   |
 
 ---
 
-## 🔧 安裝與開發
+## 🔧 安装与开发
 
 ```bash
 npm install
 npm run dev
 ```
 
-開啟 Chrome, 點選 Extension Icon，開啟 SidePanel，點選設定，到設定頁面設定 LLM
+开启 Chrome, 点选 Extension Icon，开启 SidePanel，点选设定，到设定页面设定 LLM
 <img src="https://rainmakerho.github.io/2025/05/14/optimize-sidepanel-ui-for-chatbot-interface-with-llm/01.png" />
 
 再回到對話頁面，進行對話。

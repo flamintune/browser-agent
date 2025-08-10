@@ -1,8 +1,9 @@
 import { messageRequest, messageResponse } from "../types/message";
 
-export const pageContentHandler = (
+export const pageContentHandler = async (
   message: messageRequest
-): messageResponse => {
+): Promise<messageResponse> => {
+  console.log("pageContentHandler", message);
   return {
     result: document.body.innerText,
   };

@@ -1,7 +1,7 @@
 import { matchPattern } from "browser-extension-url-match";
 
 import { pageContentTool } from "./pageContentTool";
-import { bizformExtractFieldsTool } from "./bizformExtractFieldsTool";
+import { executeScriptTool } from "./executeScriptTool";
 
 const tools = [pageContentTool];
 export { tools };
@@ -9,12 +9,8 @@ export { tools };
 const toolRules = [
   {
     matches: ["<all_urls>"], // 默認匹配
-    tools: [pageContentTool],
-  },
-  {
-    matches: ["https://bizform.vitalyun.com/*"],
-    tools: [bizformExtractFieldsTool],
-  },
+    tools: [pageContentTool,executeScriptTool],
+  }
 ];
 
 export function getToolsByUrl(url: string): any[] {
