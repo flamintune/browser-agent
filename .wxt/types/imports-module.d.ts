@@ -19,5 +19,6 @@ declare module '#imports' {
   export { useState, useCallback, useMemo, useEffect, useRef, useContext, useReducer } from 'react';
   export { fakeBrowser } from 'wxt/testing';
   export { createChatAgent } from '../utils/agents';
+  export { default as doubao } from '../utils/doubao';
   export { sendMessage } from '../utils/message';
 }

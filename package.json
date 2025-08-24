@@ -17,6 +17,7 @@
   "dependencies": {
     "@ant-design/v5-patch-for-react-19": "^1.0.3",
     "@ant-design/x": "^1.2.0",
+    "@langchain/community": "^0.3.53",
     "@langchain/core": "^0.3.51",
     "@langchain/langgraph": "^0.2.67",
     "@langchain/openai": "^0.5.10",

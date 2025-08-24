@@ -14,6 +14,7 @@ declare global {
   const defineContentScript: typeof import('wxt/utils/define-content-script')['defineContentScript']
   const defineUnlistedScript: typeof import('wxt/utils/define-unlisted-script')['defineUnlistedScript']
   const defineWxtPlugin: typeof import('wxt/utils/define-wxt-plugin')['defineWxtPlugin']
+  const doubao: typeof import('/Users/no-tomato/2025/wxtagent/utils/doubao')['default']
   const fakeBrowser: typeof import('wxt/testing')['fakeBrowser']
   const injectScript: typeof import('wxt/utils/inject-script')['injectScript']
   const sendMessage: typeof import('/Users/no-tomato/2025/wxtagent/utils/message')['sendMessage']
