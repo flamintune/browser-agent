@@ -5,8 +5,8 @@ export default defineConfig({
   modules: ["@wxt-dev/module-react"],
   manifest: ({ browser, manifestVersion, mode, command }) => {
     return {
-      name: "WXT + Agent",
-      description: "WXT + Agent",
+      name: "Browser Mini Agent",
+      description: "Browser Mini Agent",
       version: "1.0.0",
       action: {},
       permissions: ["tabs", "storage", "scripting", "activeTab", "background"],

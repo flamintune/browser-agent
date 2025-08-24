@@ -19,6 +19,18 @@ export const MESSAGE_TOOL_TYPES = {
     name: "executeScript",
     description: "执行指定的 JavaScript 脚本",
   },
+  START_ELEMENT_PICKER: {
+    name: "startElementPicker",
+    description: "开始元素选择器",
+  },
+  STOP_ELEMENT_PICKER: {
+    name: "stopElementPicker",
+    description: "停止元素选择器",
+  },
+  ELEMENT_SELECTED: {
+    name: "elementSelected",
+    description: "元素已选中",
+  },
 };
 
 export const TAB_URL_CHANGED = "TAB_URL_CHANGED";

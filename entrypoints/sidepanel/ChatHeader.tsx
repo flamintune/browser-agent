@@ -9,7 +9,7 @@ interface ChatHeaderProps {
 const ChatHeader = ({ onNewSession, openSettings }: ChatHeaderProps) => {
   return (
     <div className="chat-header">
-      <div className="chat-header-title">✨ AI Copilot</div>
+      <div className="chat-header-title">🍅 Browser Mini Agent </div>
       <Space size={0}>
         <Button
           type="text"

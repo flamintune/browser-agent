@@ -38,7 +38,7 @@ const SettingsPanel = ({ onClose }: SettingsPanelProps) => {
   };
 
   return (
-    <Card title="✨ AI Copilot LLM 設定">
+    <Card title="🍅Browser Mini Agent 设置">
       <Form form={form} layout="vertical" onFinish={handleSave}>
         <Form.Item
           label="API URL"

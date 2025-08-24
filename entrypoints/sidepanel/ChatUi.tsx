@@ -7,7 +7,7 @@ import SettingsPanel from "./SettingsPanel";
 import type { Conversation } from "@ant-design/x/es/conversations";
 import dayjs from "dayjs";
 import markdownit from "markdown-it";
-import { Typography, Divider, Tag } from "antd";
+import { Typography, Divider, Tag, message } from "antd";
 import { agentConfig } from "@/utils/types/agentConfig";
 import { TAB_URL_CHANGED } from "@/utils/types/message";
 import UtilPanel from "./UtilPanel";
@@ -132,6 +132,7 @@ export default function ChatUi() {
   const [sessionList, setSessionList] = useState<Conversation[]>([]);
   const [curSession, setCurSession] = useState<string>();
   const [showSettings, setShowSettings] = useState(false);
+  const [selectedElement, setSelectedElement] = useState<any>(null);
   const [apiSettings, setApiSettings] = useState<agentConfig>({
     apiUrl: "",
     apiKey: "",
@@ -199,10 +200,25 @@ export default function ChatUi() {
     setController(newController);
     setIsLoading(true);
     let query = input;
+    
+    // 如果有选中的元素，将其添加到查询中作为上下文
+    if (selectedElement) {
+      const elementContext = `
+选中的页面元素信息：
+- 标签: ${selectedElement.tagName}
+- ID: ${selectedElement.id || '无'}
+- Class: ${selectedElement.className || '无'}
+- 文本内容: ${selectedElement.textContent || '无'}
+- HTML: ${selectedElement.outerHTML}
+
+用户问题: ${query}`;
+      query = elementContext;
+    }
+    
     setMessages((prevMessages) => [
       ...prevMessages,
       {
-        content: query,
+        content: input, // 显示原始用户输入
         role: ROLE_HUMAN,
       },
     ]);
@@ -333,6 +349,17 @@ export default function ChatUi() {
       isProcessingRef.current = false; // 重置处理状态
     }
   };
+
+  const handleElementSelected = (element: any) => {
+    console.log("Element selected in ChatUi:", element);
+    setSelectedElement(element);
+    message.success(`已选择元素: ${element.tagName}`);
+  };
+
+  const handleRemoveElement = () => {
+    setSelectedElement(null);
+    message.info("已移除选中的元素");
+  };
   const handleSettingsClick = () => {
     setShowSettings(true);
   };
@@ -348,7 +375,43 @@ export default function ChatUi() {
         openSettings={handleSettingsClick}
       />
       <Bubble.List items={messages} roles={rolesAsObject}></Bubble.List>
-      <UtilPanel />
+      <UtilPanel onElementSelected={handleElementSelected} />
+      
+      {/* 显示选中的元素 */}
+      {selectedElement && (
+        <div style={{ 
+          margin: "8px",
+          padding: "8px",
+          background: "#f0f8ff",
+          borderRadius: "6px",
+          border: "1px solid #d0e7ff",
+          fontSize: "12px"
+        }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "4px" }}>
+            <span style={{ fontWeight: "bold", color: "#1890ff" }}>
+              已选择元素: {selectedElement.tagName}
+            </span>
+            <Tag 
+              closable 
+              onClose={handleRemoveElement}
+              color="blue"
+              style={{ margin: 0 }}
+            >
+              移除
+            </Tag>
+          </div>
+          {selectedElement.id && (
+            <div>ID: {selectedElement.id}</div>
+          )}
+          {selectedElement.className && (
+            <div>Class: {selectedElement.className}</div>
+          )}
+          {selectedElement.textContent && (
+            <div>文本: {selectedElement.textContent.slice(0, 100)}...</div>
+          )}
+        </div>
+      )}
+      
       <Sender
         value={input}
         onChange={setInput}
